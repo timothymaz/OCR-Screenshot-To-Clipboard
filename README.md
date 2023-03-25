@@ -17,7 +17,7 @@ This Python program allows you to capture a specified area of your screen using 
 
 ## Usage
 
-To use the program, run the screen_capture_ocr.py file. Once the program is running, press Shift + i to activate the GUI for capturing the screen.
+To use the program, run the Main-OCR-Screeenshot-To-Clipboard.py file. Once the program is running, press Shift + i to activate the GUI for capturing the screen.
 
 Use your mouse to select the area of the screen that you want to capture. Once you've selected the area, the program will perform OCR on the captured image and copy the extracted text to your clipboard.
 ## Limitations
