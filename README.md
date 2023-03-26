@@ -1,28 +1,31 @@
-# Screen Capture and OCR
+# OCR Screenshot Tool
 
-This Python program allows you to capture a specified area of your screen using a GUI, perform OCR on the captured image, and copy the extracted text to your clipboard. The program can be activated by pressing Shift + i on your keyboard.
+This tool allows you to take a screenshot of your screen, select a specific area with your mouse, perform OCR (Optical Character Recognition) on the selected area, and copy the recognized text to your clipboard.
+## Requirements
+
+    Python 3.6 or later
+    Packages listed in requirements.txt
+
 ## Installation
 
-### To run this program, you will need to install the following packages:
-
-    pytesseract
-    Pillow
-    pyscreenshot
-    keyboard
-    tkinter (should be pre-installed with Python)
-
-### You can install these packages using pip:
-
-    pip install pytesseract Pillow pyscreenshot keyboard
+    Clone this repository or download the source code
+    Install the required packages by running pip install -r requirements.txt
+    Run the script Main-OCR-Screeenshot-To-Clipboard.py
 
 ## Usage
 
-To use the program, run the Main-OCR-Screeenshot-To-Clipboard.py file. Once the program is running, press Shift + i to activate the GUI for capturing the screen.
+    Press the hotkey Shift + I to activate the screenshot tool
+    Use your mouse to select the area of the screen that you want to capture
+    The recognized text will be automatically copied to your clipboard
 
-Use your mouse to select the area of the screen that you want to capture. Once you've selected the area, the program will perform OCR on the captured image and copy the extracted text to your clipboard.
-## Limitations
+##Dependencies
 
-This program has only been tested on Windows 10. It may not work on other operating systems.
+    keyboard for detecting hotkeys
+    pyperclip for copying text to clipboard
+    pyscreenshot for taking screenshots
+    pytesseract for performing OCR on the selected area
+    Pillow for image processing
+
 ## License
 
-This program is licensed under the MIT License. Feel free to use and modify it for your own purposes.
+### This project is licensed under the MIT License. See the LICENSE file for details.
