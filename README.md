@@ -18,7 +18,7 @@ This tool allows you to take a screenshot of your screen, select a specific area
     Use your mouse to select the area of the screen that you want to capture
     The recognized text will be automatically copied to your clipboard
 
-##Dependencies
+## Dependencies
 
     keyboard for detecting hotkeys
     pyperclip for copying text to clipboard
