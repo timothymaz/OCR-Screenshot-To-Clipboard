@@ -14,6 +14,7 @@ class InstallWizard:
 
         self.packages_label = tk.Label(self.root, text="Required Packages:")
         self.packages_entry = tk.Entry(self.root, width=50)
+        self.packages_entry.insert(0, "pytesseract clipboard pyscreenshot keyboard")  # Add default required packages
 
         # Create widget for installation button
         self.install_button = tk.Button(self.root, text="Install", command=self.install)
@@ -42,7 +43,9 @@ class InstallWizard:
 
         # Run necessary commands to install packages and move files
         try:
-            subprocess.check_call(["pip", "install", packages])
+            for package in packages.split():
+                for package in packages.split():
+                    subprocess.check_call(["pip", "install", package])
             subprocess.check_call(["cp", "Main-OCR-Screenshot-To-Clipboard.py", install_dir])
             messagebox.showinfo("Installation Complete", "Installation complete!")
             self.root.destroy()
@@ -51,9 +54,8 @@ class InstallWizard:
         except Exception as e:
             messagebox.showerror("Error", f"An unexpected error occurred: {e}")
 
-# Create root window and wizard instance
-root = tk.Tk()
-install_wizard = InstallWizard(root)
-
-# Run GUI main loop
-root.mainloop()
+        #Create root window and wizard instance
+        root = tk.Tk()
+        install_wizard = InstallWizard(root)
+        #Run GUI main loop
+        root.mainloop()

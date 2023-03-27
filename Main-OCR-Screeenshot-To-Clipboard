@@ -1,8 +1,23 @@
 import pytesseract
 import pyperclip
+import clipboard
 import pyscreenshot as ImageGrab
 import keyboard
 import tkinter as tk
+import pyglet
+import os
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS2
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+Logo = resource_path("Logo.png")
 
 def sort_coordinates(x1, y1, x2, y2):
     return min(x1, x2), min(y1, y2), max(x1, x2), max(y1, y2)
@@ -10,7 +25,7 @@ def sort_coordinates(x1, y1, x2, y2):
 def on_start_selection(event):
     global start_x, start_y, rectangle
     start_x, start_y = event.x, event.y
-    rectangle = canvas.create_rectangle(start_x, start_y, start_x, start_y, outline='white', width=4, fill='white', stipple='gray12')
+    rectangle = canvas.create_rectangle(start_x, start_y, start_x, start_y, outline='white', width=1, fill='', stipple='gray12')
 
 
 def on_move_selection(event):
@@ -29,8 +44,8 @@ def capture_and_ocr():
                                        root.winfo_y() + sorted_coordinates[3]))
 
     text = pytesseract.image_to_string(screenshot)
-    pyperclip.copy
-
+    clipboard.copy(text)  # Use clipboard.copy instead of pyperclip.copy
+    print(text)
     print("Text from the selected area has been copied to the clipboard.")
 
 
